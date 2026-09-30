@@ -10,6 +10,21 @@ The synthetic profiles are available in the
 [Hugging Face dataset](https://huggingface.co/datasets/nghiemhnlp/ses_emnlp).
 The commands here support both local files and a pinned Hub dataset revision.
 
+## Data and citation
+
+Download or load the released data from
+**[Hugging Face: `nghiemhnlp/ses_emnlp`](https://huggingface.co/datasets/nghiemhnlp/ses_emnlp)**.
+
+```bibtex
+@inproceedings{nghiem2025rich,
+  title={‘Rich Dad, Poor Lad’: How do Large Language Models Contextualize Socioeconomic Factors in College Admission?},
+  author={Nghiem, Huy and Nguyen-Le, Phuong-Anh and Prindle, John and Rudinger, Rachel and Daum{\'e} III, Hal},
+  booktitle={Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},
+  pages={21033--21067},
+  year={2025}
+}
+```
+
 ## What is included
 
 - Conditional synthetic-profile generation with the paper's seeds and sampling
@@ -189,18 +204,6 @@ These are synthetic applicants used to audit model behavior. The generated
 decisions are not valid admissions recommendations and must not be used to make
 decisions about real people. The study demonstrates that model outputs can
 encode socioeconomic biases even when explicit income fields are absent.
-
-## Citation
-
-```bibtex
-@inproceedings{nghiem2025rich,
-  title={‘Rich Dad, Poor Lad’: How do Large Language Models Contextualize Socioeconomic Factors in College Admission?},
-  author={Nghiem, Huy and Nguyen-Le, Phuong-Anh and Prindle, John and Rudinger, Rachel and Daum{\'e} III, Hal},
-  booktitle={Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},
-  pages={21033--21067},
-  year={2025}
-}
-```
 
 ## License
 
