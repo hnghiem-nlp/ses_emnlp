@@ -137,3 +137,13 @@ Generation, prompt, and inference scripts are available at
 [hnghiem-nlp/ses_emnlp](https://github.com/hnghiem-nlp/ses_emnlp).
 
 Please cite the associated EMNLP 2025 paper when using this dataset.
+
+```bibtex
+@inproceedings{nghiem2025rich,
+  title={‘Rich Dad, Poor Lad’: How do Large Language Models Contextualize Socioeconomic Factors in College Admission?},
+  author={Nghiem, Huy and Nguyen-Le, Phuong-Anh and Prindle, John and Rudinger, Rachel and Daum{\'e} III, Hal},
+  booktitle={Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},
+  pages={21033--21067},
+  year={2025}
+}
+```
