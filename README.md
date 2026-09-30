@@ -1,14 +1,14 @@
 # Socioeconomic Reasoning in LLM Admissions Decisions
 
-This directory is the release-ready code package for the paper **“From Data to
-Decisions: The Impact of Socioeconomic Factors on Large Language Model-Based
-College Admissions.”** It contains the basic scripts needed to regenerate
+This directory is the release-ready code package for the paper **“‘Rich Dad,
+Poor Lad’: How do Large Language Models Contextualize Socioeconomic Factors in
+College Admission?”** It contains the basic scripts needed to regenerate
 synthetic applicant profiles, construct the paper's System 1 and System 2
 prompts, run the four open-source models, and parse their outputs.
 
-The synthetic profile files will be published separately on the Hugging Face
-Hub. The commands here deliberately support both local files and a pinned Hub
-dataset revision, so moving to the public dataset will not require code changes.
+The synthetic profiles are available in the
+[Hugging Face dataset](https://huggingface.co/datasets/nghiemhnlp/ses_emnlp).
+The commands here support both local files and a pinned Hub dataset revision.
 
 ## What is included
 
@@ -100,7 +100,8 @@ ses-preview-prompts \
   --attribute-seed 101
 ```
 
-Once the dataset is on Hugging Face, replace the local source arguments:
+To load the published dataset directly from Hugging Face, replace the local
+source arguments:
 
 ```bash
 ses-preview-prompts \
@@ -156,8 +157,8 @@ ses-parse-results \
 
 ## Expected Hugging Face dataset layout
 
-The scripts expect a dataset configuration named `profiles` with a `train`
-split by default. Each row should have a stable string `id` and these profile
+The published dataset uses the `default` configuration and `train` split. Each
+row has a stable string `profile_id` and these profile
 columns:
 
 ```text
@@ -166,8 +167,8 @@ award, first_gen, fee_waiver, school_type, zip_code, zip_quintile,
 ses_quintile, perf_quintile
 ```
 
-`id` is the join key between profiles and outputs. ZIP codes must be stored as
-strings so leading zeros are preserved.
+`profile_id` is the join key between profiles and outputs. ZIP codes are stored
+as strings so leading zeros are preserved.
 
 ## Reproducibility notes
 
@@ -188,6 +189,18 @@ These are synthetic applicants used to audit model behavior. The generated
 decisions are not valid admissions recommendations and must not be used to make
 decisions about real people. The study demonstrates that model outputs can
 encode socioeconomic biases even when explicit income fields are absent.
+
+## Citation
+
+```bibtex
+@inproceedings{nghiem2025rich,
+  title={‘Rich Dad, Poor Lad’: How do Large Language Models Contextualize Socioeconomic Factors in College Admission?},
+  author={Nghiem, Huy and Nguyen-Le, Phuong-Anh and Prindle, John and Rudinger, Rachel and Daum{\'e} III, Hal},
+  booktitle={Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},
+  pages={21033--21067},
+  year={2025}
+}
+```
 
 ## License
 
