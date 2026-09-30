@@ -1,0 +1,41 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+dist/
+build/
+*.egg-info/
+
+# Secrets and local credentials. Commit sanitized examples only.
+.env
+.env.*
+!.env.example
+SECRETS
+SECRETS.*
+!SECRETS.example
+.secrets/
+secrets/
+credentials.json
+service-account*.json
+configs/api_keys.yaml
+configs/api_keys.yml
+*.pem
+*.key
+*.p12
+*.pfx
+*.token
+hf_token
+.huggingface/
+.aws/
+.config/gcloud/
+
+# Generated outputs and locally downloaded datasets.
+artifacts/
+data/
+outputs/
+
+# Editor and OS files.
+.DS_Store
+.idea/
+.vscode/

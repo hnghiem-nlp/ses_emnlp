@@ -1,0 +1,41 @@
+{
+  "dataset": {
+    "repo_id": "REPLACE_WITH_ORG/REPLACE_WITH_DATASET",
+    "revision": "v1.0.0",
+    "profiles_config": "profiles",
+    "profiles_split": "train"
+  },
+  "models": {
+    "gemma": {
+      "model_id": "google/gemma-2-9b-it",
+      "revision": null,
+      "merge_system_prompt": true
+    },
+    "llama": {
+      "model_id": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "revision": null,
+      "merge_system_prompt": false
+    },
+    "mistral": {
+      "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "revision": null,
+      "merge_system_prompt": true
+    },
+    "qwen": {
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "revision": null,
+      "merge_system_prompt": false
+    }
+  },
+  "generation": {
+    "do_sample": false,
+    "max_new_tokens": 512,
+    "quantization_bits": 4
+  },
+  "seeds": {
+    "profile": [123, 456, 789],
+    "attribute_order": [101, 211, 307],
+    "system2_sampling": 123
+  }
+}
+

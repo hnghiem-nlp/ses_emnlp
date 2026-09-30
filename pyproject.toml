@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ses-admissions"
+version = "0.1.0"
+description = "Reproducibility scripts for auditing socioeconomic reasoning in LLM college-admission decisions."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24,<3",
+  "pandas>=2.0,<3",
+  "scipy>=1.10,<2",
+]
+
+[project.optional-dependencies]
+hf = ["datasets>=2.18,<5"]
+inference = [
+  "accelerate>=0.27",
+  "bitsandbytes>=0.43; platform_system == 'Linux'",
+  "torch>=2.1",
+  "transformers>=4.49,<5",
+]
+dev = [
+  "pytest>=8,<9",
+  "ruff>=0.6",
+]
+
+[project.scripts]
+ses-generate-profiles = "ses_admissions.cli:generate_profiles_main"
+ses-preview-prompts = "ses_admissions.cli:preview_prompts_main"
+ses-run-inference = "ses_admissions.cli:run_inference_main"
+ses-parse-results = "ses_admissions.cli:parse_results_main"
+ses-validate-profiles = "ses_admissions.cli:validate_profiles_main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ses_admissions"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
