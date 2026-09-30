@@ -35,7 +35,6 @@
   "seeds": {
     "profile": [123, 456, 789],
     "attribute_order": [101, 211, 307],
-    "system2_sampling": 123
+    "system2_sampling": 42
   }
 }
-

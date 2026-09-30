@@ -67,6 +67,23 @@ The paper uses profile seeds `123`, `456`, and `789`, an oversample pool of
 5,000 applicants, and stratified weighted subsampling. These are the command
 defaults. Changing them produces a different synthetic cohort.
 
+### Build the Hugging Face release table
+
+The published dataset combines all three 10,000-profile cohorts into one JSONL
+table. It preserves each original row and adds a globally unique `profile_id`,
+the cohort seed and position, and a `system2_subset` flag for the 3,000 profiles
+used in the System 2 experiments.
+
+```bash
+ses-build-hf-profiles \
+  --profiles-dir path/to/data/profiles/conditional \
+  --system2-dir path/to/data/profiles/conditional/cot_1000 \
+  --output artifacts/hf/profiles.jsonl
+```
+
+The builder verifies that every System 2 row exactly matches its parent cohort
+before producing the combined file.
+
 ## 2. Preview prompts
 
 Previewing is a lightweight way to verify the data and prompt condition before
