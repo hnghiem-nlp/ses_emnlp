@@ -1,8 +1,8 @@
 {
   "dataset": {
-    "repo_id": "REPLACE_WITH_ORG/REPLACE_WITH_DATASET",
-    "revision": "v1.0.0",
-    "profiles_config": "profiles",
+    "repo_id": "nghiemhnlp/ses_emnlp",
+    "revision": "760f21573f2a7aac26d311b6a6a8a7368a612d79",
+    "profiles_config": "default",
     "profiles_split": "train"
   },
   "models": {

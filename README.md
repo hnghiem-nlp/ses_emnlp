@@ -104,9 +104,9 @@ Once the dataset is on Hugging Face, replace the local source arguments:
 
 ```bash
 ses-preview-prompts \
-  --dataset-id ORG/DATASET \
+  --dataset-id nghiemhnlp/ses_emnlp \
   --dataset-revision v1.0.0 \
-  --dataset-config profiles \
+  --dataset-config default \
   --split train \
   --institution "Example University" \
   --tier t2 \
@@ -120,9 +120,8 @@ updates from silently changing a run.
 
 Edit [`configs/experiment.json`](configs/experiment.json) before a public run:
 
-1. Replace the placeholder dataset ID.
-2. Pin each model to the exact Hugging Face revision used for the release.
-3. Confirm the dataset revision/tag after the Hub upload.
+1. Pin each model to the exact Hugging Face revision used for the release.
+2. Confirm any local institution manifest used for the run.
 
 Then run a configured model by its key (`gemma`, `llama`, `mistral`, or `qwen`):
 
@@ -197,6 +196,6 @@ The code in this repository is released under the
 
 ## Before publishing
 
-The maintainers still need to add the final Hugging Face dataset ID and immutable
-revisions, add the final citation metadata, and replace “Example University” in
-run commands with the institutions specified by the released experiment manifest.
+The maintainers still need to pin immutable model revisions, add the final
+citation metadata, and replace “Example University” in run commands with the
+institutions specified by the released experiment manifest.

@@ -34,7 +34,11 @@ used to make admissions or other consequential decisions about individuals.
 ```python
 from datasets import load_dataset
 
-profiles = load_dataset("nghiemhnlp/ses_emnlp", split="train")
+profiles = load_dataset(
+    "nghiemhnlp/ses_emnlp",
+    split="train",
+    revision="v1.0.0",
+)
 ```
 
 All three cohorts are combined in one split. Filter using `cohort_seed`:
